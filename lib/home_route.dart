@@ -1,25 +1,9 @@
-// Copyright 2020 Google LLC
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-// http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 import 'package:admob/app_theme.dart';
 import 'package:flutter/material.dart';
-
-// COMPLETE: Import google_mobile_ads.dart
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class HomeRoute extends StatelessWidget {
-  const HomeRoute({Key? key}) : super(key: key);
+  const HomeRoute({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +19,7 @@ class HomeRoute extends StatelessWidget {
               children: [
                 const Text(
                   "Awesome Drawing Quiz!",
-                  style: TextStyle(
-                    fontSize: 32,
-                  ),
+                  style: TextStyle(fontSize: 32),
                   textAlign: TextAlign.center,
                 ),
                 const Padding(
@@ -46,7 +28,8 @@ class HomeRoute extends StatelessWidget {
                 if (snapshot.hasData)
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        foregroundColor: Theme.of(context).primaryColor),
+                      backgroundColor: Theme.of(context).colorScheme.secondary,
+                    ),
                     onPressed: () {
                       Navigator.of(context).pushNamed('/game');
                     },
@@ -78,7 +61,6 @@ class HomeRoute extends StatelessWidget {
     );
   }
 
-  // COMPLETE: Change return type to Future<InitializationStatus>
   Future<InitializationStatus> _initGoogleMobileAds() {
     return MobileAds.instance.initialize();
   }
