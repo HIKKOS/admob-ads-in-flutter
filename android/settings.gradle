@@ -15,13 +15,6 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-dependencyResolutionManagement {
-  repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-  repositories {
-    google()
-    mavenCentral()
-  }
-}
 
 plugins {
     id "dev.flutter.flutter-plugin-loader" version "1.0.0"
@@ -29,5 +22,4 @@ plugins {
     id "org.jetbrains.kotlin.android" version "1.7.10" apply false
 }
 
- 
 include ":app"

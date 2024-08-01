@@ -11,7 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
+import 'package:google_fonts/google_fonts.dart';
 import 'package:admob/app_theme.dart';
 import 'package:admob/game_route.dart';
 import 'package:admob/home_route.dart';
@@ -33,6 +33,11 @@ void main() async {
         '/game': (BuildContext context) => const GameRoute()
       },
       theme: ThemeData(
+        textTheme: GoogleFonts.acmeTextTheme().copyWith(
+            labelLarge: GoogleFonts.ubuntuMono(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+        )),
         primaryColor: AppTheme.primary,
         primaryColorDark: AppTheme.primaryDark,
         buttonTheme: ButtonThemeData(
